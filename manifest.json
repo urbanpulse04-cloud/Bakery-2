@@ -2,7 +2,7 @@
   "name": "Blissful Bitee",
   "short_name": "Blissful Bitee",
   "description": "Premium home bakery in Mian Channu — custom cakes, bento cakes and cupcakes",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#fdf6ee",
   "theme_color": "#f5c6cb",
