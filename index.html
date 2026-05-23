@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blissful Bitee — Premium Home Bakery in Mian Channu</title>
+  <meta name="description" content="Handcrafted cakes, bento cakes and cupcakes baked fresh in Mian Channu. Custom orders via WhatsApp. Red Velvet, Lotus, Three Milk Cake and more.">
+  <meta property="og:title" content="Blissful Bitee — Premium Home Bakery">
+  <meta property="og:description" content="Fresh custom cakes & pastries in Mian Channu, Pakistan. Order on WhatsApp.">
+  <meta property="og:image" content="assets/images/og-blissful-bitee.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Bakery",
+    "name":"Blissful Bitee",
+    "description":"Premium home bakery in Mian Channu offering custom cakes, bento cakes and cupcakes.",
+    "address":{"@type":"PostalAddress","addressLocality":"Mian Channu","addressRegion":"Punjab","addressCountry":"PK"},
+    "telephone":"+923286451657",
+    "email":"Contact.blissfulbitee@gmail.com",
+    "url":"https://blissfulbitee.com",
+    "sameAs":["https://www.instagram.com/blissful__bitee"]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-script">Blissful Bitee</span>
+        <span class="logo-sub">Mian Channu, Pakistan</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="custom-cakes.html">Custom Cakes</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="order.html">Order</a></li>
+    </ul>
+    <button class="btn btn-wa nav-cta" data-open-order>
+      <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Order on WhatsApp
+    </button>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- DRAWER -->
+<div class="drawer-overlay"></div>
+<nav class="nav-drawer">
+  <button class="nav-close" aria-label="Close menu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="custom-cakes.html">Custom Cakes</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="order.html">Order</a>
+  <button class="btn btn-wa drawer-wa" data-open-order>
+    <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Order on WhatsApp
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <span class="eyebrow">Home Bakery · Mian Channu, Pakistan</span>
+      <h1 class="hero-h1">
+        <span class="word">Baked</span> <span class="word">with</span> <span class="word">Love,</span>
+        <span class="hero-italic">Delivered with Joy</span>
+      </h1>
+      <span class="script hero-script">Every bite tells a story.</span>
+      <p class="hero-desc">Fresh custom cakes, bento cakes, cupcakes and celebration desserts — handcrafted in Mian Channu for birthdays, gifts, and every moment worth celebrating.</p>
+      <div class="hero-btns">
+        <button class="btn btn-wa" data-open-order>
+          <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </button>
+        <a href="menu.html" class="btn btn-outline">View Menu</a>
+      </div>
+      <div class="trust-pills">
+        <span class="trust-pill">🏠 Home Bakery</span>
+        <span class="trust-pill">✨ Custom Orders</span>
+        <span class="trust-pill">🎂 Freshly Baked</span>
+        <span class="trust-pill">📍 Mian Channu</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-badge hero-badge-2">
+        <div class="badge-title">✦ Mian Channu</div>
+        <div class="badge-sub">Pickup &amp; Delivery</div>
+      </div>
+      <div class="hero-circle">
+        <img src="assets/images/hero-cake.jpg" alt="Beautiful custom cake" loading="eager"
+          onerror="this.style.display='none'">
+        <div class="img-fallback">🎂</div>
+      </div>
+      <div class="hero-badge hero-badge-1">
+        <div class="badge-title">WhatsApp Orders</div>
+        <div class="badge-sub">Easy &amp; Personal</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Red Velvet</span>
+    <span class="marquee-item">Chocolate Fudge</span>
+    <span class="marquee-item">Lotus Cake</span>
+    <span class="marquee-item">Three Milk Cake</span>
+    <span class="marquee-item">Bento Cakes</span>
+    <span class="marquee-item">Cupcakes</span>
+    <span class="marquee-item">Custom Fondant</span>
+    <span class="marquee-item">Caramel Cake</span>
+    <span class="marquee-item">Strawberry Cake</span>
+    <span class="marquee-item">Vanilla</span>
+    <span class="marquee-item">Butterscotch</span>
+    <span class="marquee-item">Red Velvet</span>
+    <span class="marquee-item">Chocolate Fudge</span>
+    <span class="marquee-item">Lotus Cake</span>
+    <span class="marquee-item">Three Milk Cake</span>
+    <span class="marquee-item">Bento Cakes</span>
+    <span class="marquee-item">Cupcakes</span>
+    <span class="marquee-item">Custom Fondant</span>
+    <span class="marquee-item">Caramel Cake</span>
+    <span class="marquee-item">Strawberry Cake</span>
+    <span class="marquee-item">Vanilla</span>
+    <span class="marquee-item">Butterscotch</span>
+  </div>
+</div>
+
+<!-- BEST SELLERS -->
+<section class="best-sellers section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal-left">Our Specialities</span>
+      <h2 class="reveal">Best Sellers</h2>
+      <p class="reveal">Click any cake to explore details, photos and reviews — then order directly on WhatsApp.</p>
+    </div>
+    <div class="cake-grid">
+      <div class="cake-card reveal" data-delay="0" data-cake="red-velvet">
+        <div class="card-img-wrap">
+          <div class="img-fallback" style="background:linear-gradient(135deg,#8b0000,#f5c6cb)">❤️</div>
+          <img src="assets/images/cakes/red-velvet-thumb.jpg" alt="Red Velvet Cake" loading="lazy"
+            onload="this.previousElementSibling.style.display='none'"
+            onerror="this.style.display='none'">
+          <span class="card-tag">Best Seller</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Red Velvet</div>
+          <div class="card-price">PKR 1,300 / lb</div>
+        </div>
+      </div>
+      <div class="cake-card reveal" data-delay="80" data-cake="chocolate-fudge">
+        <div class="card-img-wrap">
+          <div class="img-fallback" style="background:linear-gradient(135deg,#2d1002,#7b3f1c)">🍫</div>
+          <img src="assets/images/cakes/chocolate-fudge-thumb.jpg" alt="Chocolate Fudge Cake" loading="lazy"
+            onload="this.previousElementSibling.style.display='none'"
+            onerror="this.style.display='none'">
+          <span class="card-tag">Fan Favourite</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Chocolate Fudge</div>
+          <div class="card-price">PKR 1,350 / lb</div>
+        </div>
+      </div>
+      <div class="cake-card reveal" data-delay="160" data-cake="lotus">
+        <div class="card-img-wrap">
+          <div class="img-fallback" style="background:linear-gradient(135deg,#c9a55a,#fffaf0)">✨</div>
+          <img src="assets/images/cakes/lotus-thumb.jpg" alt="Lotus Cake" loading="lazy"
+            onload="this.previousElementSibling.style.display='none'"
+            onerror="this.style.display='none'">
+          <span class="card-tag">Premium</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Lotus</div>
+          <div class="card-price">PKR 1,500 / lb</div>
+        </div>
+      </div>
+      <div class="cake-card reveal" data-delay="0" data-cake="three-milk">
+        <div class="card-img-wrap">
+          <div class="img-fallback" style="background:linear-gradient(135deg,#f9ead6,#c9a55a)">🥛</div>
+          <img src="assets/images/cakes/three-milk-thumb.jpg" alt="Three Milk Cake" loading="lazy"
+            onload="this.previousElementSibling.style.display='none'"
+            onerror="this.style.display='none'">
+          <span class="card-tag">Must Try</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Three Milk Cake</div>
+          <div class="card-price">PKR 1,800 / lb</div>
+        </div>
+      </div>
+      <div class="cake-card reveal" data-delay="80" data-cake="bento">
+        <div class="card-img-wrap">
+          <div class="img-fallback" style="background:linear-gradient(135deg,#f5c6cb,#fff0f5)">🎁</div>
+          <img src="assets/images/cakes/bento-thumb.jpg" alt="Bento Cakes" loading="lazy"
+            onload="this.previousElementSibling.style.display='none'"
+            onerror="this.style.display='none'">
+          <span class="card-tag">Gift Ready</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Bento Cakes</div>
+          <div class="card-price">From PKR 550</div>
+        </div>
+      </div>
+      <div class="cake-card reveal" data-delay="160" data-cake="cupcakes">
+        <div class="card-img-wrap">
+          <div class="img-fallback" style="background:linear-gradient(135deg,#fce4ec,#f48fb1)">🧁</div>
+          <img src="assets/images/cakes/cupcakes-thumb.jpg" alt="Cupcakes" loading="lazy"
+            onload="this.previousElementSibling.style.display='none'"
+            onerror="this.style.display='none'">
+          <span class="card-tag">Party Fave</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Cupcakes</div>
+          <div class="card-price">From PKR 500</div>
+        </div>
+      </div>
+    </div>
+    <div class="best-sellers-cta reveal">
+      <a href="menu.html" class="btn btn-outline">View Full Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal-left">Why Choose Us</span>
+      <h2 class="reveal">Everything you need, nothing you don't</h2>
+      <p class="reveal">Every order at Blissful Bitee is made fresh after confirmation — not sitting on a shelf.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal" data-delay="0">
+        <div class="why-icon">🎂</div>
+        <h3>Made Fresh to Order</h3>
+        <p>Every cake baked fresh after your order is confirmed. Never stored, never stale.</p>
+      </div>
+      <div class="why-card reveal" data-delay="80">
+        <div class="why-icon">✨</div>
+        <h3>Premium Quality</h3>
+        <p>Finest ingredients, beautiful presentation, gift-worthy packaging every time.</p>
+      </div>
+      <div class="why-card reveal" data-delay="160">
+        <div class="why-icon">🎨</div>
+        <h3>Fully Customizable</h3>
+        <p>Your theme, your flavours, your design. We bring every vision to life.</p>
+      </div>
+      <div class="why-card reveal" data-delay="240">
+        <div class="why-icon">💬</div>
+        <h3>Personal Service</h3>
+        <p>All orders through WhatsApp — we discuss every detail personally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OCCASIONS -->
+<section class="occasions section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal-left">Every Celebration</span>
+      <h2 class="reveal">Made for your special moments</h2>
+    </div>
+    <div class="occasions-grid">
+      <div class="occasion-card reveal" data-delay="0" data-open-order data-cake="Birthday Cake" data-category="Regular Cake">
+        <div class="occasion-fallback" style="background:linear-gradient(135deg,#f5c6cb,#fde8ea)">🎂</div>
+        <img class="occasion-img" src="assets/images/occasions/birthday.jpg" alt="Birthday Cakes" loading="lazy"
+          onload="this.previousElementSibling.style.display='none'"
+          onerror="this.style.display='none'">
+        <div class="occasion-overlay">
+          <div class="occasion-cat">Regular Cake</div>
+          <div class="occasion-name">Birthday Cakes</div>
+          <div class="occasion-cta">Order now →</div>
+        </div>
+      </div>
+      <div class="occasion-card reveal" data-delay="80" data-open-order data-cake="Anniversary Cake" data-category="Custom Cake">
+        <div class="occasion-fallback" style="background:linear-gradient(135deg,#e8d5a3,#f9ead6)">💍</div>
+        <img class="occasion-img" src="assets/images/occasions/anniversary.jpg" alt="Anniversary Cakes" loading="lazy"
+          onload="this.previousElementSibling.style.display='none'"
+          onerror="this.style.display='none'">
+        <div class="occasion-overlay">
+          <div class="occasion-cat">Custom Cake</div>
+          <div class="occasion-name">Anniversary Cakes</div>
+          <div class="occasion-cta">Order now →</div>
+        </div>
+      </div>
+      <div class="occasion-card reveal" data-delay="160" data-open-order data-cake="Bento Gift" data-category="Bento Cake">
+        <div class="occasion-fallback" style="background:linear-gradient(135deg,#fce4ec,#f5c6cb)">🎁</div>
+        <img class="occasion-img" src="assets/images/occasions/bento-gift.jpg" alt="Bento Gifts" loading="lazy"
+          onload="this.previousElementSibling.style.display='none'"
+          onerror="this.style.display='none'">
+        <div class="occasion-overlay">
+          <div class="occasion-cat">Bento Cake</div>
+          <div class="occasion-name">Bento Gifts</div>
+          <div class="occasion-cta">Order now →</div>
+        </div>
+      </div>
+      <div class="occasion-card reveal" data-delay="0" data-open-order data-cake="Kids Theme Cake" data-category="Custom Cake">
+        <div class="occasion-fallback" style="background:linear-gradient(135deg,#c8e6c9,#e8f5e9)">🧸</div>
+        <img class="occasion-img" src="assets/images/occasions/kids.jpg" alt="Kids Theme Cakes" loading="lazy"
+          onload="this.previousElementSibling.style.display='none'"
+          onerror="this.style.display='none'">
+        <div class="occasion-overlay">
+          <div class="occasion-cat">Custom Cake</div>
+          <div class="occasion-name">Kids Theme Cakes</div>
+          <div class="occasion-cta">Order now →</div>
+        </div>
+      </div>
+      <div class="occasion-card reveal" data-delay="80" data-open-order data-cake="Cupcake Box" data-category="Cupcakes">
+        <div class="occasion-fallback" style="background:linear-gradient(135deg,#fce4ec,#f48fb1)">🧁</div>
+        <img class="occasion-img" src="assets/images/occasions/cupcakes.jpg" alt="Cupcake Boxes" loading="lazy"
+          onload="this.previousElementSibling.style.display='none'"
+          onerror="this.style.display='none'">
+        <div class="occasion-overlay">
+          <div class="occasion-cat">Cupcakes</div>
+          <div class="occasion-name">Cupcake Boxes</div>
+          <div class="occasion-cta">Order now →</div>
+        </div>
+      </div>
+      <div class="occasion-card reveal" data-delay="160" data-open-order data-cake="Celebration Cake" data-category="Custom Cake">
+        <div class="occasion-fallback" style="background:linear-gradient(135deg,#c9a55a,#f9ead6)">🎊</div>
+        <img class="occasion-img" src="assets/images/occasions/celebration.jpg" alt="Celebrations" loading="lazy"
+          onload="this.previousElementSibling.style.display='none'"
+          onerror="this.style.display='none'">
+        <div class="occasion-overlay">
+          <div class="occasion-cat">Custom Cake</div>
+          <div class="occasion-name">Celebrations</div>
+          <div class="occasion-cta">Order now →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="how-to-order section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal-left">Simple Process</span>
+      <h2 class="reveal">How to place your order</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step-item reveal" data-delay="0">
+        <div class="step-circle"><span class="step-num">01</span></div>
+        <h3 class="step-title">Choose Your Cake</h3>
+        <p class="step-text">Browse the menu, pick your flavour, size and any customization ideas.</p>
+      </div>
+      <div class="step-item reveal" data-delay="120">
+        <div class="step-circle"><span class="step-num">02</span></div>
+        <h3 class="step-title">Fill the Order Form</h3>
+        <p class="step-text">Click any Order button, fill your details and a WhatsApp message is generated for you.</p>
+      </div>
+      <div class="step-item reveal" data-delay="240">
+        <div class="step-circle"><span class="step-num">03</span></div>
+        <h3 class="step-title">Confirm on WhatsApp</h3>
+        <p class="step-text">We confirm availability, discuss design details and agree the final price.</p>
+      </div>
+      <div class="step-item reveal" data-delay="360">
+        <div class="step-circle"><span class="step-num">04</span></div>
+        <h3 class="step-title">Pay &amp; Receive</h3>
+        <p class="step-text">Pay 50% advance via JazzCash 03286451657. We bake fresh and arrange pickup or delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS PREVIEW -->
+<section class="reviews-preview section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal-left">Customer Love</span>
+      <h2 class="reveal">What our customers say</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal" data-delay="0">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">The Red Velvet was absolutely stunning. Soft, moist and the cream cheese frosting was perfection. My whole family was amazed.</p>
+        <div class="review-name">Ayesha R.</div>
+        <div class="review-cake">Red Velvet Cake</div>
+      </div>
+      <div class="review-card reveal" data-delay="80">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">Sent a bento cake as a surprise gift and the recipient was in tears of joy. The packaging is just beautiful.</p>
+        <div class="review-name">Sara M.</div>
+        <div class="review-cake">Bento Cake</div>
+      </div>
+      <div class="review-card reveal" data-delay="160">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">The Lotus cake blew everyone away. The Biscoff caramel is so unique and rich. Presentation was absolutely stunning.</p>
+        <div class="review-name">Maham A.</div>
+        <div class="review-cake">Lotus Cake</div>
+      </div>
+    </div>
+    <p class="sample-note reveal">Sample reviews — real customer feedback coming soon</p>
+    <div class="reviews-cta reveal">
+      <a href="reviews.html" class="btn btn-outline">Read All Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER POLICY -->
+<section class="order-policy section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal-left">Order Policy</span>
+      <h2 class="reveal">Simple, honest &amp; straightforward</h2>
+    </div>
+    <div class="policy-box reveal-scale">
+      <ul class="policy-list">
+        <li>Regular cakes: 1 day advance notice required</li>
+        <li>Custom and fondant cakes: 2–3 days advance notice</li>
+        <li>50% advance payment via JazzCash 03286451657 to confirm</li>
+        <li>Pickup and delivery both available — coordinated on WhatsApp</li>
+        <li>Final price agreed before any payment is made</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-band">
+  <div class="container reveal-scale">
+    <h2>Make your next celebration sweeter.</h2>
+    <p>Handcrafted cakes in Mian Channu — one WhatsApp message away.</p>
+    <button class="btn btn-wa" style="font-size:1.05rem;padding:16px 40px" data-open-order>
+      <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Order on WhatsApp Now
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-script">Blissful Bitee</span>
+        <p>Homemade. Heartfelt. Heavenly. Premium cakes baked fresh in Mian Channu, Pakistan.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/blissful__bitee" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/923286451657" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="custom-cakes.html">Custom Cakes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="order.html">Order Now</a>
+      </div>
+      <div class="footer-col">
+        <h4>Our Cakes</h4>
+        <a href="menu.html">Regular Cakes</a>
+        <a href="menu.html">Bento Cakes</a>
+        <a href="menu.html">Cupcakes</a>
+        <a href="menu.html">Three Milk Cake</a>
+        <a href="menu.html">Lotus Cake</a>
+        <a href="custom-cakes.html">Fondant Cakes</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://wa.me/923286451657" target="_blank">WhatsApp: 03286451657</a>
+        <a href="mailto:Contact.blissfulbitee@gmail.com">Contact.blissfulbitee@gmail.com</a>
+        <a href="https://www.instagram.com/blissful__bitee" target="_blank">@blissful__bitee</a>
+        <p>Mian Channu, Punjab, Pakistan</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Blissful Bitee. All rights reserved.</p>
+      <p>Made with ❤️ in Mian Channu</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<button id="float-wa" class="float-wa" aria-label="Order on WhatsApp"
+  onclick="window.open('https://wa.me/923286451657','_blank')">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</button>
+<div id="float-wa-label" class="float-wa-label">Tap to order 🎂</div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" class="back-top" aria-label="Back to top">↑</button>
+
+<!-- MOBILE CTA BAR -->
+<div id="mobile-cta-bar" class="mobile-cta-bar">
+  <button class="btn btn-wa" data-open-order style="width:100%;justify-content:center">
+    <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Order on WhatsApp
+  </button>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
