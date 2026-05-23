@@ -47,7 +47,7 @@
       <li><a href="order.html">Order</a></li>
     </ul>
     <a href="cart.html" class="nav-cart" aria-label="View cart">
-      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4h-2l-2 8v9a1 1 0 001 1h4a1 1 0 001-1v-1h6v1a1 1 0 001 1h4a1 1 0 001-1v-9l-2-8h-2M9 9h6M9 13h6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 8h12l-1 11.5a2 2 0 01-2 1.8H9a2 2 0 01-2-1.8L6 8z M9 8V6a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span class="nav-cart-badge" data-cart-badge>0</span>
     </a>
     <button class="btn btn-wa nav-cta" data-open-order>
@@ -68,7 +68,8 @@
   <a href="menu.html">Menu</a>
   <a href="custom-cakes.html">Custom Cakes</a>
   <a href="gallery.html">Gallery</a>
-  <a href="reviews.html">Reviews</a>
+  <a href="about.html">About</a><a href="reviews.html">Reviews</a>
+  <a href="cart.html">Cart</a>
   <a href="order.html">Order</a>
   <button class="btn btn-wa drawer-wa" data-open-order>
     <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -107,8 +108,6 @@
         <div class="badge-sub">Pickup &amp; Delivery</div>
       </div>
       <div class="hero-circle">
-        <img src="assets/images/hero-cake.jpg" alt="Beautiful custom cake" loading="eager"
-          onerror="this.style.display='none'">
         <div class="img-fallback">🎂</div>
       </div>
       <div class="hero-badge hero-badge-1">
@@ -187,9 +186,6 @@
       <a class="cake-card reveal" href="cakes/red-velvet.html" data-delay="0"  style="text-decoration:none;color:inherit;display:block">
         <div class="card-img-wrap">
           <div class="img-fallback" style="background:linear-gradient(135deg,#8b0000,#f5c6cb)">❤️</div>
-          <img src="assets/images/cakes/red-velvet-thumb.jpg" alt="Red Velvet Cake" loading="lazy"
-            onload="this.previousElementSibling.style.display='none'"
-            onerror="this.style.display='none'">
           <span class="card-tag">Best Seller</span>
         </div>
         <div class="card-body">
@@ -200,9 +196,6 @@
       <a class="cake-card reveal" href="cakes/chocolate-fudge.html" data-delay="80"  style="text-decoration:none;color:inherit;display:block">
         <div class="card-img-wrap">
           <div class="img-fallback" style="background:linear-gradient(135deg,#2d1002,#7b3f1c)">🍫</div>
-          <img src="assets/images/cakes/chocolate-fudge-thumb.jpg" alt="Chocolate Fudge Cake" loading="lazy"
-            onload="this.previousElementSibling.style.display='none'"
-            onerror="this.style.display='none'">
           <span class="card-tag">Fan Favourite</span>
         </div>
         <div class="card-body">
@@ -213,9 +206,6 @@
       <a class="cake-card reveal" href="cakes/lotus.html" data-delay="160"  style="text-decoration:none;color:inherit;display:block">
         <div class="card-img-wrap">
           <div class="img-fallback" style="background:linear-gradient(135deg,#c9a55a,#fffaf0)">✨</div>
-          <img src="assets/images/cakes/lotus-thumb.jpg" alt="Lotus Cake" loading="lazy"
-            onload="this.previousElementSibling.style.display='none'"
-            onerror="this.style.display='none'">
           <span class="card-tag">Premium</span>
         </div>
         <div class="card-body">
@@ -226,9 +216,6 @@
       <a class="cake-card reveal" href="cakes/three-milk.html" data-delay="0"  style="text-decoration:none;color:inherit;display:block">
         <div class="card-img-wrap">
           <div class="img-fallback" style="background:linear-gradient(135deg,#f9ead6,#c9a55a)">🥛</div>
-          <img src="assets/images/cakes/three-milk-thumb.jpg" alt="Three Milk Cake" loading="lazy"
-            onload="this.previousElementSibling.style.display='none'"
-            onerror="this.style.display='none'">
           <span class="card-tag">Must Try</span>
         </div>
         <div class="card-body">
@@ -239,9 +226,6 @@
       <a class="cake-card reveal" href="cakes/bento.html" data-delay="80"  style="text-decoration:none;color:inherit;display:block">
         <div class="card-img-wrap">
           <div class="img-fallback" style="background:linear-gradient(135deg,#f5c6cb,#fff0f5)">🎁</div>
-          <img src="assets/images/cakes/bento-thumb.jpg" alt="Bento Cakes" loading="lazy"
-            onload="this.previousElementSibling.style.display='none'"
-            onerror="this.style.display='none'">
           <span class="card-tag">Gift Ready</span>
         </div>
         <div class="card-body">
@@ -252,9 +236,6 @@
       <a class="cake-card reveal" href="cakes/cupcakes.html" data-delay="160"  style="text-decoration:none;color:inherit;display:block">
         <div class="card-img-wrap">
           <div class="img-fallback" style="background:linear-gradient(135deg,#fce4ec,#f48fb1)">🧁</div>
-          <img src="assets/images/cakes/cupcakes-thumb.jpg" alt="Cupcakes" loading="lazy"
-            onload="this.previousElementSibling.style.display='none'"
-            onerror="this.style.display='none'">
           <span class="card-tag">Party Fave</span>
         </div>
         <div class="card-body">
@@ -312,9 +293,6 @@
     <div class="occasions-grid">
       <div class="occasion-card reveal" data-delay="0" data-open-order data-cake="Birthday Cake" data-category="Regular Cake">
         <div class="occasion-fallback" style="background:linear-gradient(135deg,#f5c6cb,#fde8ea)">🎂</div>
-        <img class="occasion-img" src="assets/images/occasions/birthday.jpg" alt="Birthday Cakes" loading="lazy"
-          onload="this.previousElementSibling.style.display='none'"
-          onerror="this.style.display='none'">
         <div class="occasion-overlay">
           <div class="occasion-cat">Regular Cake</div>
           <div class="occasion-name">Birthday Cakes</div>
@@ -323,9 +301,6 @@
       </div>
       <div class="occasion-card reveal" data-delay="80" data-open-order data-cake="Anniversary Cake" data-category="Custom Cake">
         <div class="occasion-fallback" style="background:linear-gradient(135deg,#e8d5a3,#f9ead6)">💍</div>
-        <img class="occasion-img" src="assets/images/occasions/anniversary.jpg" alt="Anniversary Cakes" loading="lazy"
-          onload="this.previousElementSibling.style.display='none'"
-          onerror="this.style.display='none'">
         <div class="occasion-overlay">
           <div class="occasion-cat">Custom Cake</div>
           <div class="occasion-name">Anniversary Cakes</div>
@@ -334,9 +309,6 @@
       </div>
       <div class="occasion-card reveal" data-delay="160" data-open-order data-cake="Bento Gift" data-category="Bento Cake">
         <div class="occasion-fallback" style="background:linear-gradient(135deg,#fce4ec,#f5c6cb)">🎁</div>
-        <img class="occasion-img" src="assets/images/occasions/bento-gift.jpg" alt="Bento Gifts" loading="lazy"
-          onload="this.previousElementSibling.style.display='none'"
-          onerror="this.style.display='none'">
         <div class="occasion-overlay">
           <div class="occasion-cat">Bento Cake</div>
           <div class="occasion-name">Bento Gifts</div>
@@ -345,9 +317,6 @@
       </div>
       <div class="occasion-card reveal" data-delay="0" data-open-order data-cake="Kids Theme Cake" data-category="Custom Cake">
         <div class="occasion-fallback" style="background:linear-gradient(135deg,#c8e6c9,#e8f5e9)">🧸</div>
-        <img class="occasion-img" src="assets/images/occasions/kids.jpg" alt="Kids Theme Cakes" loading="lazy"
-          onload="this.previousElementSibling.style.display='none'"
-          onerror="this.style.display='none'">
         <div class="occasion-overlay">
           <div class="occasion-cat">Custom Cake</div>
           <div class="occasion-name">Kids Theme Cakes</div>
@@ -356,9 +325,6 @@
       </div>
       <div class="occasion-card reveal" data-delay="80" data-open-order data-cake="Cupcake Box" data-category="Cupcakes">
         <div class="occasion-fallback" style="background:linear-gradient(135deg,#fce4ec,#f48fb1)">🧁</div>
-        <img class="occasion-img" src="assets/images/occasions/cupcakes.jpg" alt="Cupcake Boxes" loading="lazy"
-          onload="this.previousElementSibling.style.display='none'"
-          onerror="this.style.display='none'">
         <div class="occasion-overlay">
           <div class="occasion-cat">Cupcakes</div>
           <div class="occasion-name">Cupcake Boxes</div>
@@ -367,9 +333,6 @@
       </div>
       <div class="occasion-card reveal" data-delay="160" data-open-order data-cake="Celebration Cake" data-category="Custom Cake">
         <div class="occasion-fallback" style="background:linear-gradient(135deg,#c9a55a,#f9ead6)">🎊</div>
-        <img class="occasion-img" src="assets/images/occasions/celebration.jpg" alt="Celebrations" loading="lazy"
-          onload="this.previousElementSibling.style.display='none'"
-          onerror="this.style.display='none'">
         <div class="occasion-overlay">
           <div class="occasion-cat">Custom Cake</div>
           <div class="occasion-name">Celebrations</div>

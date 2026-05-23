@@ -407,7 +407,7 @@ function addRipple(sel) {
 
 /* ── Gallery ────────────────────────────────────────────────── */
 function initGallery() {
-  const filters = document.querySelectorAll('.filter-btn');
+  const filters = document.querySelectorAll('.filter-btn, .gallery-filter');
   const items = document.querySelectorAll('.gallery-item');
   if (!filters.length) return;
 
@@ -636,8 +636,8 @@ function initScrollIndicator() {
 
 /* ── Menu page search & tabs ────────────────────────────────── */
 function initMenuTabs() {
-  const tabs = document.querySelectorAll('.tab-btn');
-  const panels = document.querySelectorAll('.tab-panel');
+  const tabs = document.querySelectorAll('.menu-tab, .tab-btn');
+  const panels = document.querySelectorAll('.menu-panel, .tab-panel');
   if (!tabs.length) return;
 
   tabs.forEach(tab => {
@@ -646,7 +646,11 @@ function initMenuTabs() {
       panels.forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
       const target = document.getElementById(tab.dataset.tab);
-      if (target) target.classList.add('active');
+      if (target) {
+        target.classList.add('active');
+        // Re-inject illustrations in newly visible panel
+        if (window.injectCardIllustrations) window.injectCardIllustrations(target);
+      }
     });
   });
 }
@@ -664,6 +668,54 @@ function initMenuSearch() {
   });
 }
 
+/* ── Auto-inject SVG illustrations into cake cards ──────────── */
+function injectCardIllustrations(root) {
+  if (!window.getCakeSvg) return;
+  const scope = root || document;
+  scope.querySelectorAll('.cake-card[href*="cakes/"]').forEach(card => {
+    if (card.dataset.svgInjected) return;
+    const wrap = card.querySelector('.card-img-wrap');
+    if (!wrap) return;
+    const href = card.getAttribute('href') || '';
+    const slug = (href.match(/cakes\/([\w-]+)\.html/) || [])[1];
+    if (!slug) return;
+    const img = wrap.querySelector('img');
+    if (img) img.remove();
+    const fallback = wrap.querySelector('.img-fallback');
+    if (fallback) fallback.remove();
+    const div = document.createElement('div');
+    div.className = 'card-svg';
+    div.innerHTML = window.getCakeSvg(slug);
+    wrap.appendChild(div);
+    card.dataset.svgInjected = '1';
+  });
+
+  // Gallery items
+  scope.querySelectorAll('.gallery-item[data-cake-slug]').forEach(item => {
+    if (item.dataset.svgInjected) return;
+    const slug = item.dataset.cakeSlug;
+    const fallback = item.querySelector('.img-fallback');
+    if (fallback) fallback.remove();
+    const div = document.createElement('div');
+    div.className = 'gallery-svg';
+    div.innerHTML = window.getCakeSvg(slug);
+    item.insertBefore(div, item.firstChild);
+    item.dataset.svgInjected = '1';
+  });
+
+  // Hero illustration
+  const heroFb = scope.querySelector('.hero-circle .img-fallback');
+  const heroImg = scope.querySelector('.hero-circle img');
+  if (heroFb && !heroFb.dataset.svgInjected) {
+    if (heroImg) heroImg.remove();
+    heroFb.innerHTML = window.getCakeSvg('red-velvet');
+    heroFb.style.fontSize = '0';
+    heroFb.style.padding = '0';
+    heroFb.dataset.svgInjected = '1';
+  }
+}
+window.injectCardIllustrations = injectCardIllustrations;
+
 /* ── DOMContentLoaded ───────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
@@ -679,6 +731,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStars();
   initStepConnector();
   initFloatingWA();
+  injectCardIllustrations();
   initBackToTop();
   initCustomCursor();
   initMobileCTABar();
