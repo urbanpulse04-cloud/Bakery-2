@@ -1866,6 +1866,21 @@ p { color: var(--text-soft); }
     animation-duration: 0s !important;
     transition-duration: 0s !important;
   }
+  .reveal, .reveal-scale, .reveal-left {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Safety net: if JS doesn't run, reveal elements still show after 3s */
+@keyframes revealFallback {
+  to { opacity: 1; transform: none; }
+}
+.reveal, .reveal-scale, .reveal-left {
+  animation: revealFallback 0s 3s forwards;
+}
+.reveal.revealed, .reveal-scale.revealed, .reveal-left.revealed {
+  animation: none;
 }
 
 *:focus-visible {
