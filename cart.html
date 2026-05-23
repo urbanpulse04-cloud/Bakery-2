@@ -100,6 +100,17 @@
 
     const subtotal = Cart.subtotal();
     const advance = Math.round(subtotal * 0.5);
+    const hasUnpriced = items.some(i => !i.price);
+    const subtotalLabel = hasUnpriced && subtotal === 0
+      ? 'On request'
+      : (hasUnpriced
+          ? `PKR ${subtotal.toLocaleString()}+`
+          : `PKR ${subtotal.toLocaleString()}`);
+    const totalLabel = hasUnpriced
+      ? (subtotal > 0
+          ? `PKR ${subtotal.toLocaleString()}+ custom`
+          : 'Confirmed on WhatsApp')
+      : `PKR ${subtotal.toLocaleString()}`;
 
     host.innerHTML = `
       <div class="cart-grid">
@@ -129,9 +140,9 @@
 
         <div class="cart-summary">
           <h3>Order Summary</h3>
-          <div class="summary-row"><span>Items (${Cart.count()})</span><span class="summary-val">PKR ${subtotal.toLocaleString()}</span></div>
+          <div class="summary-row"><span>Items (${Cart.count()})</span><span class="summary-val">${subtotalLabel}</span></div>
           <div class="summary-row"><span>Delivery</span><span style="color:var(--text-muted)">Confirmed on WhatsApp</span></div>
-          <div class="summary-row total"><span>Estimated Total</span><span class="summary-val">PKR ${subtotal.toLocaleString()}</span></div>
+          <div class="summary-row total"><span>Estimated Total</span><span class="summary-val">${totalLabel}</span></div>
           <a href="checkout.html" class="btn btn-gold" style="text-decoration:none">Proceed to Checkout</a>
           <a href="menu.html" class="btn btn-outline" style="text-decoration:none;margin-top:8px">Add More Items</a>
           <div class="advance-note">
