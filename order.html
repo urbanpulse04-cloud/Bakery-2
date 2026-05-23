@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order — Blissful Bitee</title>
+  <meta name="description" content="Place your cake order at Blissful Bitee, Mian Channu. Fill the form and we'll open WhatsApp with your order ready to send. Custom cakes, bento cakes, cupcakes and more.">
+  <meta property="og:title" content="Order — Blissful Bitee">
+  <meta property="og:description" content="Place your order with Blissful Bitee — premium home bakery in Mian Channu, Pakistan.">
+  <meta property="og:image" content="assets/images/og-blissful-bitee.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-script">Blissful Bitee</span>
+        <span class="logo-sub">Mian Channu, Pakistan</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="custom-cakes.html">Custom Cakes</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="order.html" class="active">Order</a></li>
+    </ul>
+    <button class="btn btn-wa nav-cta" data-open-order>
+      <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Order on WhatsApp
+    </button>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- DRAWER -->
+<div class="drawer-overlay"></div>
+<nav class="nav-drawer">
+  <button class="nav-close" aria-label="Close menu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="custom-cakes.html">Custom Cakes</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="order.html">Order</a>
+  <button class="btn btn-wa drawer-wa" data-open-order>
+    <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Order on WhatsApp
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Place Your Order</span>
+    <h1>Let's make your cake</h1>
+    <p>Fill the form below and we'll open WhatsApp with your order ready to send. Easy, personal and straightforward.</p>
+  </div>
+</section>
+
+<!-- ORDER SECTION -->
+<section class="order-section section">
+  <div class="container">
+    <div class="order-grid">
+
+      <!-- LEFT: INLINE FORM -->
+      <div class="order-form-inline reveal-left">
+        <h3>Order Details</h3>
+        <form id="order-inline-form" novalidate>
+
+          <!-- Name -->
+          <div class="form-group">
+            <label class="form-label" for="oi-name">Your Name *</label>
+            <input class="form-input" type="text" id="oi-name" name="name" placeholder="Your full name" required>
+            <span class="form-error">Please enter your name</span>
+          </div>
+
+          <!-- Product -->
+          <div class="form-group">
+            <label class="form-label" for="oi-product">Product / Cake Name *</label>
+            <input class="form-input" type="text" id="oi-product" name="product" placeholder="e.g. Red Velvet, Bento Cake..." required>
+            <span class="form-error">Please enter a product name</span>
+          </div>
+
+          <!-- Category -->
+          <div class="form-group">
+            <label class="form-label" for="oi-category">Category</label>
+            <select class="form-select" id="oi-category" name="category">
+              <option value="">Select category</option>
+              <option value="Regular Cake">Regular Cake</option>
+              <option value="Bento Cake">Bento Cake</option>
+              <option value="Cupcakes">Cupcakes</option>
+              <option value="Custom Cake">Custom Cake</option>
+            </select>
+          </div>
+
+          <!-- Flavor -->
+          <div class="form-group">
+            <label class="form-label" for="oi-flavor">Flavor *</label>
+            <select class="form-select" id="oi-flavor" name="flavor" required>
+              <option value="">Select flavor</option>
+              <option value="Vanilla">Vanilla</option>
+              <option value="Strawberry">Strawberry</option>
+              <option value="Chocolate Cream">Chocolate Cream</option>
+              <option value="Caramel">Caramel</option>
+              <option value="Butterscotch">Butterscotch</option>
+              <option value="Coffee">Coffee</option>
+              <option value="Vanilla Pineapple">Vanilla Pineapple</option>
+              <option value="Red Velvet">Red Velvet</option>
+              <option value="Chocolate Fudge">Chocolate Fudge</option>
+              <option value="Lotus">Lotus</option>
+              <option value="Three Milk Cake">Three Milk Cake</option>
+              <option value="Custom / Other">Custom / Other</option>
+            </select>
+            <span class="form-error">Please select a flavor</span>
+          </div>
+
+          <!-- Size -->
+          <div class="form-group">
+            <label class="form-label" for="size-select">Size / Quantity *</label>
+            <select class="form-select" id="size-select" name="size" required>
+              <option value="">Select size</option>
+              <option value="0.5 lb">0.5 lb</option>
+              <option value="1 lb">1 lb</option>
+              <option value="1.5 lb">1.5 lb</option>
+              <option value="2 lb">2 lb</option>
+              <option value="3 lb">3 lb</option>
+              <option value="4 lb">4 lb</option>
+              <option value="5 lb">5 lb</option>
+              <option value="6 lb">6 lb</option>
+              <option value="7 lb">7 lb</option>
+              <option value="8 lb">8 lb</option>
+              <option value="9 lb">9 lb</option>
+              <option value="Bento (single)">Bento (single)</option>
+              <option value="4 pcs cupcakes">4 pcs cupcakes</option>
+              <option value="6 pcs cupcakes">6 pcs cupcakes</option>
+              <option value="Custom size">Custom size</option>
+            </select>
+            <span class="form-error">Please select a size</span>
+          </div>
+
+          <!-- Date -->
+          <div class="form-group">
+            <label class="form-label" for="oi-date">Required Date *</label>
+            <input class="form-input" type="date" id="oi-date" name="date" required>
+            <span class="form-error">Please select a date</span>
+            <span class="date-hint form-hint">Minimum 1 day advance notice</span>
+          </div>
+
+          <!-- Occasion -->
+          <div class="form-group">
+            <label class="form-label" for="oi-occasion">Occasion</label>
+            <select class="form-select" id="oi-occasion" name="occasion">
+              <option value="">Select occasion</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Anniversary">Anniversary</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Eid">Eid</option>
+              <option value="Baby Shower">Baby Shower</option>
+              <option value="Office Event">Office Event</option>
+              <option value="Gift">Gift</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <!-- Preferred Time -->
+          <div class="form-group">
+            <label class="form-label">Preferred Time *</label>
+            <div class="form-radio-group">
+              <label class="form-radio-label">
+                <input type="radio" name="time" value="Morning (Before 12pm)"> Morning (Before 12pm)
+              </label>
+              <label class="form-radio-label">
+                <input type="radio" name="time" value="Afternoon (12–5pm)" checked> Afternoon (12–5pm)
+              </label>
+              <label class="form-radio-label">
+                <input type="radio" name="time" value="Evening (After 5pm)"> Evening (After 5pm)
+              </label>
+            </div>
+          </div>
+
+          <!-- Pickup / Delivery -->
+          <div class="form-group">
+            <label class="form-label">Pickup or Delivery *</label>
+            <div class="form-radio-group">
+              <label class="form-radio-label">
+                <input type="radio" name="delivery" value="Pickup" checked> Pickup
+              </label>
+              <label class="form-radio-label">
+                <input type="radio" name="delivery" value="Delivery"> Delivery
+              </label>
+            </div>
+            <span class="form-hint">Delivery charges confirmed on WhatsApp</span>
+          </div>
+
+          <!-- Design Notes -->
+          <div class="form-group">
+            <label class="form-label" for="oi-design">Design / Theme Notes (optional)</label>
+            <textarea class="form-textarea" id="oi-design" name="design" placeholder="Any colour preferences, theme, photo message, design ideas..."></textarea>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-wa form-submit">
+            <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Send Order on WhatsApp
+          </button>
+
+        </form>
+      </div><!-- /order-form-inline -->
+
+      <!-- RIGHT: CONTACT + POLICY -->
+      <div class="order-right reveal">
+
+        <!-- Contact Cards -->
+        <div class="contact-cards">
+
+          <div class="contact-card">
+            <div class="contact-card-icon" style="background:#25d366">
+              <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <h4>WhatsApp</h4>
+              <p>The fastest way to reach us</p>
+              <a href="https://wa.me/923286451657" target="_blank" rel="noopener">03286451657</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon" style="background:var(--blush)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <h4>Email</h4>
+              <p>For non-urgent queries</p>
+              <a href="mailto:Contact.blissfulbitee@gmail.com">Contact.blissfulbitee@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon" style="background:var(--gold)">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <h4>Instagram</h4>
+              <p>Follow for daily updates</p>
+              <a href="https://www.instagram.com/blissful__bitee" target="_blank" rel="noopener">@blissful__bitee</a>
+            </div>
+          </div>
+
+        </div><!-- /contact-cards -->
+
+        <!-- Policy Box -->
+        <div class="policy-box reveal-scale">
+          <ul class="policy-list">
+            <li>Regular cakes: 1 day advance notice</li>
+            <li>Custom cakes: 2–3 days advance notice</li>
+            <li>50% advance via JazzCash 03286451657</li>
+            <li>Pickup or delivery available</li>
+          </ul>
+        </div>
+
+      </div><!-- /order-right -->
+
+    </div><!-- /order-grid -->
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal-left">Got Questions</span>
+      <h2 class="reveal">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item reveal" data-delay="0">
+        <button class="faq-q">
+          How early should I order?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Regular cakes: 1 day minimum. Custom and fondant cakes: 2–3 days minimum. Same-day orders are not available.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-delay="60">
+        <button class="faq-q">
+          Is advance payment required?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Yes — 50% advance via JazzCash 03286451657 confirms the order. Remaining 50% on pickup or delivery.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-delay="120">
+        <button class="faq-q">
+          Do you offer delivery?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Yes, delivery is available in Mian Channu. Charges are confirmed on WhatsApp based on distance.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-delay="180">
+        <button class="faq-q">
+          Can I fully customize my cake?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Absolutely — theme, design, size, fondant, photo, multi-tier and more. Share your idea on WhatsApp and we'll bring it to life.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-delay="240">
+        <button class="faq-q">
+          Are prices fixed?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Standard cake prices are fixed per pound. Custom cake prices vary by design complexity. All prices are agreed before any payment is made.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-delay="300">
+        <button class="faq-q">
+          Do you have a physical shop?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            No — Blissful Bitee is a home-based bakery. There is no physical shop. All orders are placed through WhatsApp only.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-delay="360">
+        <button class="faq-q">
+          What sizes are available?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            0.5 lb to 9 lb for regular cakes. Bento cakes are single-serving. Cupcakes are available in boxes of 4 or 6.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-delay="420">
+        <button class="faq-q">
+          Can I order for the same day?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Same-day orders are not available. All cakes are baked fresh after confirmation, so advance notice is required for every order.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /faq-list -->
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container reveal-scale">
+    <h2>Still have questions?</h2>
+    <p>Message us on WhatsApp — we're happy to help.</p>
+    <a href="https://wa.me/923286451657" target="_blank" rel="noopener"
+       class="btn btn-wa" style="font-size:1.05rem;padding:16px 40px">
+      <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-script">Blissful Bitee</span>
+        <p>Homemade. Heartfelt. Heavenly. Premium cakes baked fresh in Mian Channu, Pakistan.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/blissful__bitee" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/923286451657" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="custom-cakes.html">Custom Cakes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="order.html">Order Now</a>
+      </div>
+      <div class="footer-col">
+        <h4>Our Cakes</h4>
+        <a href="menu.html">Regular Cakes</a>
+        <a href="menu.html">Bento Cakes</a>
+        <a href="menu.html">Cupcakes</a>
+        <a href="menu.html">Three Milk Cake</a>
+        <a href="menu.html">Lotus Cake</a>
+        <a href="custom-cakes.html">Fondant Cakes</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://wa.me/923286451657" target="_blank">WhatsApp: 03286451657</a>
+        <a href="mailto:Contact.blissfulbitee@gmail.com">Contact.blissfulbitee@gmail.com</a>
+        <a href="https://www.instagram.com/blissful__bitee" target="_blank">@blissful__bitee</a>
+        <p>Mian Channu, Punjab, Pakistan</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Blissful Bitee. All rights reserved.</p>
+      <p>Made with ❤️ in Mian Channu</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<button id="float-wa" class="float-wa" aria-label="Order on WhatsApp"
+  onclick="window.open('https://wa.me/923286451657','_blank')">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</button>
+<div id="float-wa-label" class="float-wa-label">Tap to order 🎂</div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" class="back-top" aria-label="Back to top">↑</button>
+
+<!-- MOBILE CTA BAR -->
+<div id="mobile-cta-bar" class="mobile-cta-bar">
+  <button class="btn btn-wa" data-open-order style="width:100%;justify-content:center">
+    <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Order on WhatsApp
+  </button>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
