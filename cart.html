@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart — Blissful Bitee</title>
+<meta name="description" content="Review your cart and proceed to checkout.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<meta name="theme-color" content="#f5c6cb">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="nav-logo">
+      <a href="index.html"><span class="logo-script">Blissful Bitee</span><span class="logo-sub">Mian Channu, Pakistan</span></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="custom-cakes.html">Custom Cakes</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <a href="cart.html" class="nav-cart" aria-label="View cart">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4h-2l-2 8v9a1 1 0 001 1h4a1 1 0 001-1v-1h6v1a1 1 0 001 1h4a1 1 0 001-1v-9l-2-8h-2M9 9h6M9 13h6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="nav-cart-badge" data-cart-badge>0</span>
+    </a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-overlay"></div>
+<nav class="nav-drawer">
+  <button class="nav-close">✕</button>
+  <a href="index.html">Home</a><a href="menu.html">Menu</a><a href="custom-cakes.html">Custom Cakes</a>
+  <a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="reviews.html">Reviews</a>
+  <a href="cart.html" class="active">Cart</a>
+</nav>
+
+<main class="cart-page">
+  <div class="container">
+    <div class="section-header" style="text-align:left;margin-bottom:48px">
+      <span class="eyebrow">Your Selection</span>
+      <h1 style="margin:8px 0 0">Your Cart</h1>
+    </div>
+
+    <div id="cart-host">
+      <!-- hydrated by cart-page.js -->
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-script">Blissful Bitee</span>
+        <p>Homemade. Heartfelt. Heavenly. Premium cakes baked fresh in Mian Channu.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4>
+        <a href="index.html">Home</a><a href="menu.html">Menu</a><a href="about.html">About</a><a href="reviews.html">Reviews</a>
+      </div>
+      <div class="footer-col"><h4>Help</h4>
+        <a href="order.html">How to Order</a><a href="cart.html">Cart</a><a href="checkout.html">Checkout</a>
+      </div>
+      <div class="footer-col"><h4>Contact</h4>
+        <a href="https://wa.me/923286451657">WhatsApp: 03286451657</a>
+        <a href="mailto:Contact.blissfulbitee@gmail.com">Contact.blissfulbitee@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Blissful Bitee.</p><p>Made with ❤️ in Mian Channu</p></div>
+  </div>
+</footer>
+
+<button id="back-top" class="back-top">↑</button>
+
+<script src="assets/js/cake-data.js"></script>
+<script src="assets/js/cake-illustrations.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+(function() {
+  const host = document.getElementById('cart-host');
+
+  function render() {
+    const items = Cart.items();
+
+    if (!items.length) {
+      host.innerHTML = `
+        <div class="empty-cart">
+          <div class="empty-cart-icon">🧁</div>
+          <h3>Your cart is empty</h3>
+          <p>Browse our menu and add a cake or two — they pair well with celebrations.</p>
+          <a href="menu.html" class="btn btn-gold" style="text-decoration:none">Browse Menu</a>
+        </div>`;
+      return;
+    }
+
+    const subtotal = Cart.subtotal();
+    const advance = Math.round(subtotal * 0.5);
+
+    host.innerHTML = `
+      <div class="cart-grid">
+        <div class="cart-items">
+          ${items.map(item => {
+            const svg = window.getCakeSvg ? window.getCakeSvg(item.slug) : '';
+            return `
+            <div class="cart-item" data-id="${item.id}">
+              <div class="cart-item-img">${svg}</div>
+              <div class="cart-item-info">
+                <h3>${item.name}</h3>
+                <div class="cart-item-meta">${item.size}${item.flavor ? ' · ' + item.flavor : ''}</div>
+                ${item.message ? `<div class="cart-item-message">"${item.message}"</div>` : ''}
+                <div class="qty-stepper" style="margin-top:10px">
+                  <button class="qty-btn" data-act="dec">−</button>
+                  <span class="qty-val">${item.qty}</span>
+                  <button class="qty-btn" data-act="inc">+</button>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-price">${item.price ? 'PKR ' + (item.price * item.qty).toLocaleString() : 'On request'}</div>
+                <button class="cart-remove" data-act="remove">Remove</button>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>
+
+        <div class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-row"><span>Items (${Cart.count()})</span><span class="summary-val">PKR ${subtotal.toLocaleString()}</span></div>
+          <div class="summary-row"><span>Delivery</span><span style="color:var(--text-muted)">Confirmed on WhatsApp</span></div>
+          <div class="summary-row total"><span>Estimated Total</span><span class="summary-val">PKR ${subtotal.toLocaleString()}</span></div>
+          <a href="checkout.html" class="btn btn-gold" style="text-decoration:none">Proceed to Checkout</a>
+          <a href="menu.html" class="btn btn-outline" style="text-decoration:none;margin-top:8px">Add More Items</a>
+          <div class="advance-note">
+            50% advance via JazzCash <strong>03286451657</strong> confirms your order. Remaining 50% on delivery.
+          </div>
+        </div>
+      </div>`;
+
+    host.addEventListener('click', e => {
+      const itemEl = e.target.closest('.cart-item');
+      if (!itemEl) return;
+      const id = itemEl.dataset.id;
+      const act = e.target.dataset.act;
+      const item = Cart.items().find(i => i.id === id);
+      if (!item) return;
+      if (act === 'inc') Cart.setQty(id, item.qty + 1);
+      else if (act === 'dec') Cart.setQty(id, item.qty - 1);
+      else if (act === 'remove') Cart.remove(id);
+    }, { once: true });
+  }
+
+  render();
+  Cart.onChange(render);
+  document.addEventListener('cart:storage-change', render);
+})();
+</script>
+</body>
+</html>

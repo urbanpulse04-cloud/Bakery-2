@@ -4,176 +4,6 @@
 
 'use strict';
 
-/* ── CAKE DATA ──────────────────────────────────────────────── */
-const CAKE_DATA = [
-  {
-    slug: 'red-velvet', name: 'Red Velvet', emoji: '❤️',
-    category: 'Regular Cake', price: 'PKR 1,300 / lb', priceRaw: 1300, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#8b0000,#f5c6cb)',
-    tags: ['Best Seller', 'Fan Favourite', 'Birthday'],
-    desc: 'Our signature Red Velvet is a showstopper — deep crimson layers with silky cream cheese frosting. Velvety soft crumb, perfectly balanced sweetness. The one everyone keeps ordering.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Birthdays & Gifts',
-    serving: 'Best served chilled.', storage: 'Refrigerate; consume within 3 days.',
-    reviews: [
-      { name: 'Ayesha R.', text: 'The Red Velvet was absolutely stunning. Soft, moist and the cream cheese frosting was perfection.' },
-      { name: 'Rida S.', text: 'Ordered for my husband\'s birthday — he declared it the best cake he has ever tasted.' }
-    ]
-  },
-  {
-    slug: 'chocolate-fudge', name: 'Chocolate Fudge', emoji: '🍫',
-    category: 'Regular Cake', price: 'PKR 1,350 / lb', priceRaw: 1350, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#2d1002,#7b3f1c)',
-    tags: ['Fan Favourite', 'Indulgent'],
-    desc: 'Deeply rich, intensely chocolaty, impossibly fudgy. Three layers of dense chocolate sponge with dark chocolate ganache that melts the moment it touches your tongue.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Chocolate Lovers',
-    serving: 'Best at room temperature.', storage: 'Refrigerate; consume within 3 days.',
-    reviews: [
-      { name: 'Hira B.', text: 'Richest, most indulgent chocolate cake I have ever had. Dense, fudgy and absolutely divine.' },
-      { name: 'Nida F.', text: 'My son refused any other cake after tasting the Chocolate Fudge. We are now regulars.' }
-    ]
-  },
-  {
-    slug: 'lotus', name: 'Lotus', emoji: '✨',
-    category: 'Regular Cake', price: 'PKR 1,500 / lb', priceRaw: 1500, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#c9a55a,#fffaf0)',
-    tags: ['Premium', 'Unique'],
-    desc: 'Biscoff caramel meets airy sponge in this one-of-a-kind cake. Layers of vanilla cream with Lotus Biscoff spread, finished with crushed Biscoff biscuits on top.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Special Occasions',
-    serving: 'Best served chilled.', storage: 'Refrigerate; consume within 2 days.',
-    reviews: [
-      { name: 'Maham A.', text: 'The Lotus cake blew everyone away. The Biscoff caramel is so unique and rich.' },
-      { name: 'Rida S.', text: 'Ordered for my husband\'s birthday and he declared it the best cake he has ever tasted.' }
-    ]
-  },
-  {
-    slug: 'three-milk', name: 'Three Milk Cake', emoji: '🥛',
-    category: 'Regular Cake', price: 'PKR 1,800 / lb', priceRaw: 1800, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#f9ead6,#c9a55a)',
-    tags: ['Must Try', 'Premium', 'Chilled'],
-    desc: 'Soaked in three kinds of milk — evaporated, condensed, and cream — this featherlight sponge is impossibly moist and creamy. A family gathering staple.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Summer Gatherings',
-    serving: 'Must be served cold.', storage: 'Refrigerate always; consume within 2 days.',
-    reviews: [
-      { name: 'Fatima K.', text: 'The Three Milk Cake is something else entirely. Impossibly moist and creamy.' },
-      { name: 'Bushra R.', text: 'Perfect for summer. Light, refreshing and absolutely delicious served cold.' }
-    ]
-  },
-  {
-    slug: 'chocolate-cream', name: 'Chocolate Cream', emoji: '🍩',
-    category: 'Regular Cake', price: 'PKR 1,050 / lb', priceRaw: 1050, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#4a2010,#d4a45a)',
-    tags: ['Classic', 'Popular'],
-    desc: 'Light chocolate sponge layered with soft whipped cream and chocolate drizzle. A crowd-pleaser for all ages.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'All Occasions',
-    serving: 'Best served chilled.', storage: 'Refrigerate; consume within 3 days.',
-    reviews: [{ name: 'Sara M.', text: 'The chocolate cream was perfectly balanced — not too sweet, not too heavy.' }]
-  },
-  {
-    slug: 'caramel', name: 'Caramel', emoji: '🍮',
-    category: 'Regular Cake', price: 'PKR 1,050 / lb', priceRaw: 1050, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#c9a55a,#f9ead6)',
-    tags: ['Classic'],
-    desc: 'Golden caramel sponge with salted caramel cream and caramel drizzle. Warm, comforting and utterly irresistible.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Caramel Lovers',
-    serving: 'Lovely at room temperature.', storage: 'Refrigerate; consume within 3 days.',
-    reviews: [{ name: 'Hira B.', text: 'The caramel cake was heavenly — deep, rich flavour without being overwhelming.' }]
-  },
-  {
-    slug: 'butterscotch', name: 'Butterscotch', emoji: '🧈',
-    category: 'Regular Cake', price: 'PKR 1,050 / lb', priceRaw: 1050, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#e8c98a,#f9ead6)',
-    tags: ['Classic', 'Kids Favourite'],
-    desc: 'Buttery sponge with butterscotch cream and crunchy butterscotch bits. Nostalgic, warm and endlessly popular with kids.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Kids Parties',
-    serving: 'Best at room temperature.', storage: 'Refrigerate; consume within 3 days.',
-    reviews: [{ name: 'Noor F.', text: 'My kids absolutely loved the butterscotch flavour. Will order again!' }]
-  },
-  {
-    slug: 'coffee', name: 'Coffee', emoji: '☕',
-    category: 'Regular Cake', price: 'PKR 1,050 / lb', priceRaw: 1050, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#3d1f0a,#a07c35)',
-    tags: ['For Adults', 'Bold'],
-    desc: 'Espresso-soaked sponge with coffee mascarpone cream. Bold, sophisticated and perfect for coffee enthusiasts.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Coffee Enthusiasts',
-    serving: 'Best slightly chilled.', storage: 'Refrigerate; consume within 3 days.',
-    reviews: [{ name: 'Kiran B.', text: 'The coffee cake was sophisticated and perfectly strong — just how I like it.' }]
-  },
-  {
-    slug: 'vanilla-pineapple', name: 'Vanilla Pineapple', emoji: '🍍',
-    category: 'Regular Cake', price: 'PKR 1,050 / lb', priceRaw: 1050, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#f9ead6,#e8c98a)',
-    tags: ['Fruity', 'Refreshing'],
-    desc: 'Soft vanilla sponge with pineapple cream and fresh pineapple pieces. Light, tropical and delightfully refreshing.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Summer & Eid',
-    serving: 'Best served cold.', storage: 'Refrigerate; consume within 2 days.',
-    reviews: [{ name: 'Samia R.', text: 'The pineapple flavour was so fresh and natural. Absolutely loved it.' }]
-  },
-  {
-    slug: 'strawberry', name: 'Strawberry', emoji: '🍓',
-    category: 'Regular Cake', price: 'PKR 900 / lb', priceRaw: 900, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#f5c6cb,#c0404a)',
-    tags: ['Fruity', 'Classic'],
-    desc: 'Delicate strawberry sponge with fresh cream and strawberry compote. Pretty in pink and loved by everyone.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Girls Birthdays',
-    serving: 'Best served chilled.', storage: 'Refrigerate; consume within 2 days.',
-    reviews: [{ name: 'Ayesha R.', text: 'The strawberry cake was beautiful and tasted exactly as it looked — light and fresh.' }]
-  },
-  {
-    slug: 'vanilla', name: 'Vanilla', emoji: '🤍',
-    category: 'Regular Cake', price: 'PKR 850 / lb', priceRaw: 850, unit: 'per lb',
-    gradient: 'linear-gradient(135deg,#fdf6ee,#e8d5a3)',
-    tags: ['Classic', 'Everyone\'s Favourite'],
-    desc: 'The original. Pure vanilla sponge with whipped vanilla cream. Simple, elegant and endlessly satisfying.',
-    sizes: '0.5 lb to 9 lb', notice: '1 day advance', bestFor: 'Any Occasion',
-    serving: 'Great at room temperature.', storage: 'Refrigerate; consume within 3 days.',
-    reviews: [{ name: 'Mehwish A.', text: 'Sometimes simple is best. The vanilla cake was perfect — just exactly what I wanted.' }]
-  },
-  {
-    slug: 'bento', name: 'Bento Cake', emoji: '🎁',
-    category: 'Bento Cake', price: 'From PKR 550', priceRaw: 550, unit: 'per piece',
-    gradient: 'linear-gradient(135deg,#f5c6cb,#fff0f5)',
-    tags: ['Gift Ready', 'Mini Cake'],
-    desc: 'Adorable single-serving mini cakes, beautifully packaged and perfect as gifts. Available in Vanilla, Strawberry, Coffee, Caramel, Butterscotch, Chocolate Cream and Chocolate Fudge.',
-    sizes: 'Single serving', notice: '1 day advance', bestFor: 'Gifts & Surprises',
-    serving: 'Best at room temperature or slightly chilled.', storage: 'Consume within 2 days.',
-    reviews: [{ name: 'Sara M.', text: 'Sent a bento cake as a surprise gift and the recipient was in tears of joy. Beautiful packaging.' }]
-  },
-  {
-    slug: 'cupcakes', name: 'Cupcakes', emoji: '🧁',
-    category: 'Cupcakes', price: 'From PKR 500', priceRaw: 500, unit: 'per box',
-    gradient: 'linear-gradient(135deg,#fce4ec,#f48fb1)',
-    tags: ['Party Fave', 'Customizable'],
-    desc: 'Individually frosted cupcakes in your choice of flavour. Available in boxes of 4 or 6. Perfect for parties, events and gifting.',
-    sizes: '4 pcs or 6 pcs', notice: '1 day advance', bestFor: 'Parties & Events',
-    serving: 'Best at room temperature.', storage: 'Consume within 2 days.',
-    reviews: [{ name: 'Noor F.', text: 'Ordered cupcakes for my niece\'s party — every single one fresh, beautifully decorated, delicious.' }]
-  },
-  {
-    slug: 'custom', name: 'Custom Cake', emoji: '🎨',
-    category: 'Custom Cake', price: 'Price on request', priceRaw: null, unit: '',
-    gradient: 'linear-gradient(135deg,#c9a55a,#f5c6cb)',
-    tags: ['Fully Custom', 'Any Design'],
-    desc: 'Your vision, our craft. Fondant designs, floral decorations, edible photos, multi-tier cakes, character themes — we bring every idea to life. Price confirmed after discussing design details.',
-    sizes: 'Any size', notice: '2–3 days advance', bestFor: 'Weddings, Special Events',
-    serving: 'Based on filling choice.', storage: 'Based on filling choice.',
-    reviews: [
-      { name: 'Mehwish A.', text: 'The custom fondant cake for my daughter\'s birthday was beyond all expectations.' },
-      { name: 'Kiran B.', text: 'A custom floral cake for my anniversary — I cried when I saw it. Absolutely breathtaking.' }
-    ]
-  }
-];
-
-function getCake(slug) { return CAKE_DATA.find(c => c.slug === slug); }
-
-function getRelevantSizes(category) {
-  if (!category) return ['0.5 lb','1 lb','1.5 lb','2 lb','3 lb','4 lb','5 lb','6 lb','7 lb','8 lb','9 lb','Bento (single)','4 pcs cupcakes','6 pcs cupcakes','Custom size'];
-  const c = category.toLowerCase();
-  if (c.includes('bento')) return ['Single serving mini cake'];
-  if (c.includes('cupcake')) return ['4 pcs','6 pcs','9 pcs — ask for price','12 pcs — ask for price'];
-  if (c.includes('custom')) return ['0.5 lb','1 lb','1.5 lb','2 lb','3 lb','4 lb','5 lb','6 lb','7 lb','8 lb','9 lb','Custom size — discuss on WhatsApp'];
-  return ['0.5 lb','1 lb','1.5 lb','2 lb','3 lb','4 lb','5 lb','6 lb','7 lb','8 lb','9 lb'];
-}
-
 function buildOrderMessage(data) {
   const msg = `Hello Blissful Bitee! 🎂 I want to place an order.
 
@@ -856,4 +686,90 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollIndicator();
   initMenuTabs();
   initMenuSearch();
+});
+
+/* ============================================================
+   v2 — Cart badge, Toast, Page transitions
+   ============================================================ */
+
+// Toast host
+function ensureToastHost() {
+  let h = document.getElementById('toast-host');
+  if (!h) {
+    h = document.createElement('div');
+    h.id = 'toast-host';
+    h.className = 'toast-host';
+    document.body.appendChild(h);
+  }
+  return h;
+}
+
+function showToast({ title, msg, icon = '🎂', actionText, actionHref }) {
+  const host = ensureToastHost();
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `
+    <div class="toast-icon">${icon}</div>
+    <div class="toast-body">
+      <p class="toast-title">${title}</p>
+      ${msg ? `<p class="toast-msg">${msg}</p>` : ''}
+    </div>
+    ${actionText ? `<a class="toast-action" href="${actionHref || '#'}">${actionText}</a>` : ''}
+  `;
+  host.appendChild(t);
+  requestAnimationFrame(() => t.classList.add('show'));
+  setTimeout(() => {
+    t.classList.remove('show');
+    setTimeout(() => t.remove(), 400);
+  }, 3500);
+}
+
+window.showToast = showToast;
+
+// Cart badge updates
+function initCartBadge() {
+  if (!window.Cart) return;
+  const badges = document.querySelectorAll('[data-cart-badge]');
+  if (!badges.length) return;
+
+  function update() {
+    const count = window.Cart.count();
+    badges.forEach(b => {
+      b.textContent = count > 99 ? '99+' : count;
+      b.classList.toggle('has-items', count > 0);
+    });
+  }
+
+  update();
+  window.Cart.onChange(update);
+  document.addEventListener('cart:storage-change', update);
+}
+
+// Page progress + soft transitions
+function initPageProgress() {
+  const bar = document.createElement('div');
+  bar.className = 'page-progress';
+  document.body.appendChild(bar);
+
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') ||
+        href.startsWith('tel:') || a.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    bar.classList.remove('done');
+    bar.classList.add('go');
+    document.body.classList.add('page-leaving');
+  });
+
+  window.addEventListener('pageshow', () => {
+    bar.classList.add('done');
+    document.body.classList.remove('page-leaving');
+    setTimeout(() => bar.remove(), 600);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCartBadge();
+  initPageProgress();
 });

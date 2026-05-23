@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Blissful Bitee</title>
+<meta name="description" content="Complete your order with delivery details, personalisation, and dietary preferences.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<meta name="theme-color" content="#f5c6cb">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="nav-logo">
+      <a href="index.html"><span class="logo-script">Blissful Bitee</span><span class="logo-sub">Mian Channu, Pakistan</span></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="custom-cakes.html">Custom Cakes</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <a href="cart.html" class="nav-cart" aria-label="View cart">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4h-2l-2 8v9a1 1 0 001 1h4a1 1 0 001-1v-1h6v1a1 1 0 001 1h4a1 1 0 001-1v-9l-2-8h-2M9 9h6M9 13h6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="nav-cart-badge" data-cart-badge>0</span>
+    </a>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-overlay"></div>
+<nav class="nav-drawer">
+  <button class="nav-close">✕</button>
+  <a href="index.html">Home</a><a href="menu.html">Menu</a><a href="custom-cakes.html">Custom Cakes</a>
+  <a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="reviews.html">Reviews</a><a href="cart.html">Cart</a>
+</nav>
+
+<main class="checkout-page">
+  <div class="container">
+    <div class="section-header" style="text-align:left;margin-bottom:40px">
+      <span class="eyebrow">Almost there</span>
+      <h1 style="margin:8px 0 8px">Checkout</h1>
+      <p style="margin:0;max-width:520px">Fill in your details — we'll open WhatsApp with your order ready to send.</p>
+    </div>
+
+    <div id="checkout-host"></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-script">Blissful Bitee</span>
+        <p>Homemade. Heartfelt. Heavenly.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="about.html">About</a></div>
+      <div class="footer-col"><h4>Help</h4><a href="cart.html">Cart</a><a href="order.html">How to Order</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="https://wa.me/923286451657">WhatsApp: 03286451657</a><a href="mailto:Contact.blissfulbitee@gmail.com">Contact.blissfulbitee@gmail.com</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Blissful Bitee.</p><p>Made with ❤️ in Mian Channu</p></div>
+  </div>
+</footer>
+
+<button id="back-top" class="back-top">↑</button>
+
+<script src="assets/js/cake-data.js"></script>
+<script src="assets/js/cake-illustrations.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+(function() {
+  const host = document.getElementById('checkout-host');
+
+  function render() {
+    const items = Cart.items();
+
+    if (!items.length) {
+      host.innerHTML = `
+        <div class="empty-cart">
+          <div class="empty-cart-icon">🛒</div>
+          <h3>Nothing to check out</h3>
+          <p>Add a cake to your cart first.</p>
+          <a href="menu.html" class="btn btn-gold" style="text-decoration:none">Browse Menu</a>
+        </div>`;
+      return;
+    }
+
+    const subtotal = Cart.subtotal();
+    const today = new Date();
+    const minDate = new Date(today); minDate.setDate(today.getDate() + 1);
+    const minDateStr = minDate.toISOString().split('T')[0];
+
+    host.innerHTML = `
+      <div class="checkout-grid">
+        <form id="co-form" class="checkout-sections" novalidate>
+
+          <section class="checkout-section">
+            <div class="checkout-section-header">
+              <div class="checkout-step">1</div>
+              <h3>Your Details</h3>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input class="form-input" type="text" name="name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number *</label>
+                <input class="form-input" type="tel" name="phone" placeholder="03XX XXXXXXX" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email (optional)</label>
+              <input class="form-input" type="email" name="email">
+            </div>
+          </section>
+
+          <section class="checkout-section">
+            <div class="checkout-section-header">
+              <div class="checkout-step">2</div>
+              <h3>Delivery</h3>
+            </div>
+            <div class="option-block">
+              <label class="option-label">Pickup or Delivery</label>
+              <div class="toggle-pill">
+                <button type="button" class="toggle-pill-btn active" data-method="Pickup">Pickup</button>
+                <button type="button" class="toggle-pill-btn" data-method="Delivery">Delivery</button>
+              </div>
+              <input type="hidden" name="method" value="Pickup">
+            </div>
+            <div id="delivery-fields" style="display:none">
+              <div class="form-group">
+                <label class="form-label">Delivery Address *</label>
+                <textarea class="form-textarea" name="address" rows="3" placeholder="House, street, area, landmark"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Delivery Notes</label>
+                <input class="form-input" type="text" name="deliveryNotes" placeholder="Gate code, time preference, etc.">
+              </div>
+              <p class="form-hint">Delivery charges confirmed on WhatsApp based on distance.</p>
+            </div>
+          </section>
+
+          <section class="checkout-section">
+            <div class="checkout-section-header">
+              <div class="checkout-step">3</div>
+              <h3>When</h3>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Required Date *</label>
+                <input class="form-input" type="date" name="date" min="${minDateStr}" required>
+                <span class="form-hint">Minimum 1 day for regular, 3 days for custom</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Preferred Time *</label>
+                <select class="form-select" name="time" required>
+                  <option value="">Choose time</option>
+                  <option value="Morning (before 12pm)">Morning (before 12pm)</option>
+                  <option value="Afternoon (12–5pm)" selected>Afternoon (12–5pm)</option>
+                  <option value="Evening (after 5pm)">Evening (after 5pm)</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="checkout-section">
+            <div class="checkout-section-header">
+              <div class="checkout-step">4</div>
+              <h3>Personalisation</h3>
+            </div>
+            ${items.map(item => `
+              <div style="border-bottom:1px solid rgba(201,165,90,.12);padding-bottom:20px;margin-bottom:20px">
+                <p style="font-weight:600;color:var(--brown);margin-bottom:12px;font-size:1rem">${item.name} (${item.size} × ${item.qty})</p>
+                <div class="form-group">
+                  <label class="form-label">Message on cake (optional)</label>
+                  <input class="form-input message-input" type="text" name="msg-${item.id}" value="${item.message || ''}" maxlength="40" placeholder="e.g. Happy Birthday Sara">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Design notes (optional)</label>
+                  <input class="form-input" type="text" name="design-${item.id}" placeholder="Theme, colour, photo, etc.">
+                </div>
+              </div>`).join('')}
+
+            <div class="option-block">
+              <label class="option-label">Dietary Requirements (optional)</label>
+              <div class="checkbox-chips">
+                <label><input type="checkbox" name="dietary" value="Eggless"><span>Eggless</span></label>
+                <label><input type="checkbox" name="dietary" value="Sugar-free"><span>Sugar-free</span></label>
+                <label><input type="checkbox" name="dietary" value="Nut-free"><span>Nut-free</span></label>
+                <label><input type="checkbox" name="dietary" value="Gluten-aware"><span>Gluten-aware</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Allergies / Health Notes</label>
+              <input class="form-input" type="text" name="allergies" placeholder="Anything we should know?">
+            </div>
+          </section>
+
+          <section class="checkout-section">
+            <div class="checkout-section-header">
+              <div class="checkout-step">5</div>
+              <h3>Additional</h3>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Occasion</label>
+                <select class="form-select" name="occasion">
+                  <option value="">Select...</option>
+                  <option>Birthday</option><option>Anniversary</option><option>Wedding</option>
+                  <option>Eid</option><option>Baby Shower</option><option>Office Event</option>
+                  <option>Gift</option><option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">How did you hear about us?</label>
+                <select class="form-select" name="referral">
+                  <option value="">Select...</option>
+                  <option>Instagram</option><option>WhatsApp</option><option>Friend</option>
+                  <option>Returning customer</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Special Instructions</label>
+              <textarea class="form-textarea" name="notes" rows="3" placeholder="Anything else we should know"></textarea>
+            </div>
+          </section>
+        </form>
+
+        <aside class="checkout-side">
+          <div class="checkout-summary">
+            <h3>Your Order</h3>
+            ${items.map(item => `
+              <div class="summary-item">
+                <div>
+                  <div class="summary-item-name">${item.name}</div>
+                  <div class="summary-item-qty">${item.size} × ${item.qty}</div>
+                </div>
+                <div class="summary-val">${item.price ? 'PKR ' + (item.price * item.qty).toLocaleString() : 'TBD'}</div>
+              </div>`).join('')}
+            <div class="summary-row total" style="margin-top:16px"><span>Total</span><span class="summary-val">PKR ${subtotal.toLocaleString()}</span></div>
+            <div class="advance-note">50% advance via JazzCash <strong>03286451657</strong> confirms your order.</div>
+            <button type="button" id="submit-order" class="btn btn-wa" style="width:100%;justify-content:center;margin-top:20px">
+              <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Send Order on WhatsApp
+            </button>
+            <a href="cart.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:8px;text-decoration:none">Edit Cart</a>
+          </div>
+        </aside>
+      </div>`;
+
+    // Method toggle
+    const methodBtns = host.querySelectorAll('.toggle-pill-btn');
+    const methodInput = host.querySelector('[name="method"]');
+    const deliveryFields = host.querySelector('#delivery-fields');
+    methodBtns.forEach(b => b.addEventListener('click', () => {
+      methodBtns.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      methodInput.value = b.dataset.method;
+      deliveryFields.style.display = b.dataset.method === 'Delivery' ? 'block' : 'none';
+    }));
+
+    document.getElementById('submit-order').addEventListener('click', () => {
+      const form = document.getElementById('co-form');
+      let valid = true;
+      form.querySelectorAll('[required]').forEach(f => {
+        if (!f.value.trim()) {
+          f.classList.add('error');
+          valid = false;
+        } else f.classList.remove('error');
+      });
+      if (!valid) {
+        const first = form.querySelector('.error');
+        if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      const fd = new FormData(form);
+      const dietary = fd.getAll('dietary').join(', ') || '—';
+
+      let msg = `Hello Blissful Bitee! 🎂 New order:\n\n*CUSTOMER*\nName: ${fd.get('name')}\nPhone: ${fd.get('phone')}`;
+      if (fd.get('email')) msg += `\nEmail: ${fd.get('email')}`;
+
+      msg += `\n\n*DELIVERY*\nMethod: ${fd.get('method')}`;
+      if (fd.get('method') === 'Delivery') {
+        msg += `\nAddress: ${fd.get('address') || '—'}`;
+        if (fd.get('deliveryNotes')) msg += `\nNotes: ${fd.get('deliveryNotes')}`;
+      }
+
+      msg += `\n\n*WHEN*\nDate: ${fd.get('date')}\nTime: ${fd.get('time')}`;
+
+      msg += `\n\n*ORDER ITEMS*`;
+      items.forEach((item, i) => {
+        msg += `\n\n${i + 1}. ${item.name}`;
+        msg += `\n   Size: ${item.size} · Qty: ${item.qty}`;
+        if (item.price) msg += `\n   Est. price: PKR ${(item.price * item.qty).toLocaleString()}`;
+        const messageOnCake = fd.get(`msg-${item.id}`);
+        if (messageOnCake) msg += `\n   Message on cake: "${messageOnCake}"`;
+        const designNotes = fd.get(`design-${item.id}`);
+        if (designNotes) msg += `\n   Design notes: ${designNotes}`;
+      });
+
+      msg += `\n\n*PERSONALISATION*\nDietary: ${dietary}`;
+      if (fd.get('allergies')) msg += `\nAllergies: ${fd.get('allergies')}`;
+
+      msg += `\n\n*ADDITIONAL*`;
+      if (fd.get('occasion')) msg += `\nOccasion: ${fd.get('occasion')}`;
+      if (fd.get('referral')) msg += `\nHow heard: ${fd.get('referral')}`;
+      if (fd.get('notes')) msg += `\nNotes: ${fd.get('notes')}`;
+
+      msg += `\n\nEstimated subtotal: PKR ${subtotal.toLocaleString()}\nPlease confirm availability, final price and advance payment details. Thank you!`;
+
+      // Open WhatsApp
+      window.open(`https://wa.me/923286451657?text=${encodeURIComponent(msg)}`, '_blank');
+
+      // Redirect to thank-you with cart clear (after small delay)
+      setTimeout(() => {
+        sessionStorage.setItem('bb-last-order', JSON.stringify({ name: fd.get('name'), count: items.length, total: subtotal }));
+        Cart.clear();
+        window.location.href = 'thank-you.html';
+      }, 600);
+    });
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>

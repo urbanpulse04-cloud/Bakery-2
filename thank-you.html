@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Sent — Blissful Bitee</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<meta name="theme-color" content="#f5c6cb">
+</head>
+<body>
+<main class="simple-page">
+  <div class="simple-page-content">
+    <div class="simple-page-illustration">
+      <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="160" r="100" fill="#fff8e0"/>
+        <circle cx="200" cy="160" r="80" fill="#f5c6cb"/>
+        <path d="M165 165 L190 190 L240 140" stroke="#fffcfa" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="80" y="80" font-size="24" fill="#c9a55a">✦</text>
+        <text x="320" y="240" font-size="24" fill="#c9a55a">✦</text>
+        <text x="60" y="220" font-size="20" fill="#e8a4ab">♡</text>
+        <text x="340" y="100" font-size="20" fill="#e8a4ab">♡</text>
+      </svg>
+    </div>
+    <h1>Order on its way!</h1>
+    <p id="thank-msg">We've opened WhatsApp with your full order. Send the message and we'll respond personally to confirm details and advance payment.</p>
+    <div class="btn-row">
+      <a href="index.html" class="btn btn-gold" style="text-decoration:none">Back to Home</a>
+      <a href="menu.html" class="btn btn-outline" style="text-decoration:none">Order Again</a>
+    </div>
+    <div style="margin-top:32px;padding:20px;background:rgba(255,255,255,.6);border-radius:16px;font-size:.88rem;color:var(--text-soft)">
+      <strong style="color:var(--brown)">What happens next?</strong><br>
+      We'll confirm availability within a few hours, agree on the final price, and share JazzCash details for the 50% advance. Your cake is baked fresh on the morning of delivery.
+    </div>
+  </div>
+</main>
+<script>
+(function() {
+  try {
+    const last = JSON.parse(sessionStorage.getItem('bb-last-order') || 'null');
+    if (last && last.name) {
+      document.getElementById('thank-msg').textContent =
+        `Thanks ${last.name}! We've opened WhatsApp with all ${last.count} item${last.count > 1 ? 's' : ''} from your cart. Send the message and we'll respond personally.`;
+    }
+  } catch {}
+})();
+</script>
+<script src="assets/js/cart.js"></script>
+</body>
+</html>
